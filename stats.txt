@@ -1,0 +1,50 @@
+bombardier -c 200 -n 10000 http://localhost:8888/trending
+Bombarding http://localhost:8888/trending with 10000 request(s) using 200 connection(s)
+ 10000 / 10000 [=============================================================================================================] 100.00% 787/s 12s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec       794.90     310.27    1892.83
+  Latency      246.04ms   322.86ms      1.06s
+  HTTP codes:
+    1xx - 0, 2xx - 10000, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:   223.52KB/s
+
+bombardier -c 100 -n 10000 http://localhost:8888/trending
+Bombarding http://localhost:8888/trending with 10000 request(s) using 100 connection(s)
+ 10000 / 10000 [=============================================================================================================] 100.00% 775/s 12s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec       788.20     307.02    1877.33
+  Latency      126.06ms   162.26ms   618.07ms
+  HTTP codes:
+    1xx - 0, 2xx - 10000, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:   220.94KB/s
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                               WITH CACHE
+bombardier -c 200 -n 10000 http://localhost:8888/trending
+Bombarding http://localhost:8888/trending with 10000 request(s) using 200 connection(s)
+ 10000 / 10000 [=============================================================================================================] 100.00% 9866/s 1s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec     11685.63    5553.43   23517.08
+  Latency       17.28ms    24.43ms   398.32ms
+  HTTP codes:
+    1xx - 0, 2xx - 10000, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:     3.13MB/s
+
+bombardier -c 100 -n 10000 http://localhost:8888/trending
+Bombarding http://localhost:8888/trending with 10000 request(s) using 100 connection(s)
+ 10000 / 10000 [=============================================================================================================] 100.00% 9952/s 1s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec     12081.24    3036.18   21285.18
+  Latency        8.40ms     4.58ms    47.67ms
+  HTTP codes:
+    1xx - 0, 2xx - 10000, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:     3.23MB/s
+
